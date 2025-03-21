@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PermutationScheduler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">testexample</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">PermutationScheduler.java</span></div><h1>PermutationScheduler.java</h1><pre class="source lang-java linenums">public class PermutationScheduler {
+
+    private final int[] permutation;  // the permutation P
+    private final int[] indexList;    // the sorted list of indices (assumed sorted in increasing order)
+    private final MinHeap minHeap;    // min-priority queue for integers
+    private int currentPos;           // tracks how far we have &quot;scanned&quot; in the permutation
+
+    /**
+     * Constructor for PermutationScheduler.
+     * @param permutation An array representing the permutation (must not be null).
+     * @param indexList An array of indices (must not be null).
+     * @throws IllegalArgumentException if any input array is null.
+     */
+<span class="fc" id="L14">    public PermutationScheduler(int[] permutation, int[] indexList) {</span>
+<span class="fc bfc" id="L15" title="All 4 branches covered.">        if (permutation == null || indexList == null) {</span>
+<span class="fc" id="L16">            throw new IllegalArgumentException(&quot;Input arrays cannot be null.&quot;);</span>
+        }
+<span class="fc" id="L18">        this.permutation = permutation;</span>
+<span class="fc" id="L19">        this.indexList = indexList;</span>
+<span class="fc" id="L20">        this.minHeap = new MinHeap();</span>
+<span class="fc" id="L21">        this.currentPos = 0;</span>
+<span class="fc" id="L22">    }</span>
+
+    /**
+     * Associates each index in indexList with the smallest available integer
+     * from the permutation using a min-heap.
+     *
+     * @return An array of the k distinct associated integers.
+     */
+    public int[] associateIndices() {
+<span class="fc" id="L31">        int k = indexList.length;</span>
+<span class="fc" id="L32">        int[] result = new int[k];</span>
+    
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        for (int j = 0; j &lt; k; j++) {</span>
+<span class="fc" id="L35">            int targetIndex = indexList[j];</span>
+    
+            // Insert new elements from permutation into the heap until we reach targetIndex
+<span class="fc bfc" id="L38" title="All 2 branches covered.">            while (currentPos &lt; targetIndex) {</span>
+<span class="fc" id="L39">                currentPos++;</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">                if (currentPos &lt; permutation.length) {</span>
+<span class="fc" id="L41">                    minHeap.insert(permutation[currentPos]);</span>
+                }
+            }
+    
+            // NEW CHECK: If the minHeap is empty here, it means we have no elements to extract
+            // (e.g., repeated index without advancing currentPos).
+            // Instead of letting MinHeap throw NoSuchElementException,
+            // you can throw your own custom exception or handle it differently.
+<span class="fc bfc" id="L49" title="All 2 branches covered.">            if (isHeapEmpty()) {</span>
+<span class="fc" id="L50">                throw new IllegalStateException(</span>
+                    &quot;Cannot extract from an empty heap. &quot;
+                  + &quot;Possibly caused by repeated index: &quot; + targetIndex
+                );
+            }
+    
+            // Extract the smallest integer from the minHeap.
+<span class="fc" id="L57">            result[j] = minHeap.extractMin();</span>
+        }
+<span class="fc" id="L59">        return result;</span>
+    }
+    
+    /**
+     * A helper method to check if the heap is empty.
+     * (Assuming you have a size variable or a way to get the size of the heap.)
+     */
+    private boolean isHeapEmpty() {
+        // If MinHeap doesn't have a public isEmpty() or getSize() method,
+        // add one, or modify as appropriate.
+        // For example, if you have MinHeap.size as a public field or a getter:
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        return minHeap.getSize() == 0;</span>
+    }
+    
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

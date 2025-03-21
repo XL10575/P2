@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="1" failures="0" hostname="WDNMD" id="0" name="MainTest" package="" skipped="0" tests="1" time="0.055" timestamp="2025-03-07T20:03:40">
+      <properties>
+          <property name="ant.library.dir" value="C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="testexample" />
+
+          <property name="sun.cpu.isalist" value="amd64" />
+
+          <property name="sun.jnu.encoding" value="Cp1252" />
+
+          <property name="java.class.path" value="C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\hamcrest-2.2.jar;C:\Users\24457\Desktop\Project2\build;C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\junit-4.13.jar;C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\ant-launcher.jar;C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\ant.jar;C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\ant-junit.jar;C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\ant-junit4.jar" />
+
+          <property name="java.vm.vendor" value="Eclipse Adoptium" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="user.variant" value="" />
+
+          <property name="java.vendor.url" value="https://adoptium.net/" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Windows 11" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="US" />
+
+          <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot\bin" />
+
+          <property name="output.dir" value="output" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner MainTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\24457\Desktop\Project2\report\junit\TEST-MainTest.xml crashfile=C:\Users\24457\Desktop\Project2\junitvmwatcher1703311161332197998.properties propsfile=C:\Users\24457\Desktop\Project2\junit15529226329399275075.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="C:\Users\24457" />
+
+          <property name="user.language" value="en" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="_jacoco.agentFile" value="C:\Users\24457\AppData\Local\Temp\jacocoagent18355030446328095337.jar" />
+
+          <property name="java.version.date" value="2025-01-21" />
+
+          <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot" />
+
+          <property name="basedir" value="C:\Users\24457\Desktop\Project2" />
+
+          <property name="file.separator" value="\" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="jacoco.file" value="report/jacoco/jacoco.exec" />
+
+          <property name="line.separator" value="&#xd;&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="ant.file.testexample" value="C:\Users\24457\Desktop\Project2\build.xml" />
+
+          <property name="doc.dir" value="doc" />
+
+          <property name="user.script" value="" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.6+7-LTS" />
+
+          <property name="user.name" value="24457" />
+
+          <property name="ant.file" value="C:\Users\24457\Desktop\Project2\build.xml" />
+
+          <property name="stdout.encoding" value="Cp1252" />
+
+          <property name="path.separator" value=";" />
+
+          <property name="jacoco.dir" value="report/jacoco" />
+
+          <property name="os.version" value="10.0" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="report" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="java.vendor.version" value="Temurin-21.0.6+7" />
+
+          <property name="report.dir" value="report" />
+
+          <property name="junit.dir" value="report/junit" />
+
+          <property name="build.dir" value="build" />
+
+          <property name="ant.core.lib" value="C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\ant.jar" />
+
+          <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues" />
+
+          <property name="java.io.tmpdir" value="C:\Users\24457\AppData\Local\Temp\" />
+
+          <property name="java.version" value="21.0.6" />
+
+          <property name="user.dir" value="C:\Users\24457\Desktop\Project2" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="output.file" value="output/output.txt" />
+
+          <property name="ant.home" value="C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15" />
+
+          <property name="sun.os.patch.level" value="" />
+
+          <property name="error.file" value="output/error.txt" />
+
+          <property name="native.encoding" value="Cp1252" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.15 compiled on August 25 2024" />
+
+          <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot\bin;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\24457\AppData\Local\Microsoft\WindowsApps;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MATLAB\R2023a\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files (x86)\apache-ant-1.10.15-bin;C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\bin;C:\Users\24457\Scripts\;C:\Users\24457\;C:\Users\24457\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\24457\AppData\Local\Programs\Python\Python313\;C:\Users\24457\AppData\Local\Microsoft\WindowsApps;C:\intelFPGA\20.1\modelsim_ase\win32aloem;C:\Users\24457\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\24457\AppData\Local\GitHubDesktop\bin;C:\Users\24457\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;." />
+
+          <property name="java.vendor" value="Eclipse Adoptium" />
+
+          <property name="stderr.encoding" value="Cp1252" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="ant.file.type.testexample" value="file" />
+
+          <property name="java.vm.version" value="21.0.6+7-LTS" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="src.dir" value="src" />
+
+      </properties>
+
+      <testcase classname="MainTest" name="initializationError" time="0.005">
+          <error message="Invalid test class &apos;MainTest&apos;:&#xa;  1. No runnable methods" type="org.junit.runners.model.InvalidTestClassError">org.junit.runners.model.InvalidTestClassError: Invalid test class &apos;MainTest&apos;:
+  1. No runnable methods
+	at org.junit.runners.ParentRunner.validate(ParentRunner.java:525)
+	at org.junit.runners.ParentRunner.&lt;init&gt;(ParentRunner.java:102)
+	at org.junit.runners.BlockJUnit4ClassRunner.&lt;init&gt;(BlockJUnit4ClassRunner.java:84)
+	at org.junit.runners.JUnit4.&lt;init&gt;(JUnit4.java:23)
+	at org.junit.internal.builders.JUnit4Builder.runnerForClass(JUnit4Builder.java:10)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:37)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.internal.requests.ClassRequest.createRunner(ClassRequest.java:28)
+	at org.junit.internal.requests.MemoizingRequest.getRunner(MemoizingRequest.java:19)
+	at junit.framework.JUnit4TestAdapter.&lt;init&gt;(JUnit4TestAdapter.java:42)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:497)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1197)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
+</error>
+
+      </testcase>
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="1" failures="0" hostname="WDNMD" id="1" name="PermutationSchedulerJUnitTest" package="" skipped="0" tests="9" time="0.071" timestamp="2025-03-07T20:03:40">
+      <properties>
+          <property name="ant.library.dir" value="C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="testexample" />
+
+          <property name="sun.cpu.isalist" value="amd64" />
+
+          <property name="sun.jnu.encoding" value="Cp1252" />
+
+          <property name="java.class.path" value="C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\hamcrest-2.2.jar;C:\Users\24457\Desktop\Project2\build;C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\junit-4.13.jar;C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\ant-launcher.jar;C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\ant.jar;C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\ant-junit.jar;C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\ant-junit4.jar" />
+
+          <property name="java.vm.vendor" value="Eclipse Adoptium" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="user.variant" value="" />
+
+          <property name="java.vendor.url" value="https://adoptium.net/" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Windows 11" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="US" />
+
+          <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot\bin" />
+
+          <property name="output.dir" value="output" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner PermutationSchedulerJUnitTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\24457\Desktop\Project2\report\junit\TEST-PermutationSchedulerJUnitTest.xml crashfile=C:\Users\24457\Desktop\Project2\junitvmwatcher1587371326284989280.properties propsfile=C:\Users\24457\Desktop\Project2\junit10251850773445328537.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="C:\Users\24457" />
+
+          <property name="user.language" value="en" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="_jacoco.agentFile" value="C:\Users\24457\AppData\Local\Temp\jacocoagent18355030446328095337.jar" />
+
+          <property name="java.version.date" value="2025-01-21" />
+
+          <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot" />
+
+          <property name="basedir" value="C:\Users\24457\Desktop\Project2" />
+
+          <property name="file.separator" value="\" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="jacoco.file" value="report/jacoco/jacoco.exec" />
+
+          <property name="line.separator" value="&#xd;&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="ant.file.testexample" value="C:\Users\24457\Desktop\Project2\build.xml" />
+
+          <property name="doc.dir" value="doc" />
+
+          <property name="user.script" value="" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.6+7-LTS" />
+
+          <property name="user.name" value="24457" />
+
+          <property name="ant.file" value="C:\Users\24457\Desktop\Project2\build.xml" />
+
+          <property name="stdout.encoding" value="Cp1252" />
+
+          <property name="path.separator" value=";" />
+
+          <property name="jacoco.dir" value="report/jacoco" />
+
+          <property name="os.version" value="10.0" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="report" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="java.vendor.version" value="Temurin-21.0.6+7" />
+
+          <property name="report.dir" value="report" />
+
+          <property name="junit.dir" value="report/junit" />
+
+          <property name="build.dir" value="build" />
+
+          <property name="ant.core.lib" value="C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\lib\ant.jar" />
+
+          <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues" />
+
+          <property name="java.io.tmpdir" value="C:\Users\24457\AppData\Local\Temp\" />
+
+          <property name="java.version" value="21.0.6" />
+
+          <property name="user.dir" value="C:\Users\24457\Desktop\Project2" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="output.file" value="output/output.txt" />
+
+          <property name="ant.home" value="C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15" />
+
+          <property name="sun.os.patch.level" value="" />
+
+          <property name="error.file" value="output/error.txt" />
+
+          <property name="native.encoding" value="Cp1252" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.15 compiled on August 25 2024" />
+
+          <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot\bin;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\24457\AppData\Local\Microsoft\WindowsApps;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MATLAB\R2023a\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files (x86)\apache-ant-1.10.15-bin;C:\Program Files (x86)\apache-ant-1.10.15-bin\apache-ant-1.10.15\bin;C:\Users\24457\Scripts\;C:\Users\24457\;C:\Users\24457\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\24457\AppData\Local\Programs\Python\Python313\;C:\Users\24457\AppData\Local\Microsoft\WindowsApps;C:\intelFPGA\20.1\modelsim_ase\win32aloem;C:\Users\24457\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\24457\AppData\Local\GitHubDesktop\bin;C:\Users\24457\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;." />
+
+          <property name="java.vendor" value="Eclipse Adoptium" />
+
+          <property name="stderr.encoding" value="Cp1252" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="ant.file.type.testexample" value="file" />
+
+          <property name="java.vm.version" value="21.0.6+7-LTS" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="src.dir" value="src" />
+
+      </properties>
+
+      <testcase classname="PermutationSchedulerJUnitTest" name="testAssociateIndices_RepeatedIndexException" time="0.008" />
+
+      <testcase classname="PermutationSchedulerJUnitTest" name="testMinHeap_ToString" time="0.0" />
+
+      <testcase classname="PermutationSchedulerJUnitTest" name="testConstructor_NullPermutation" time="0.001" />
+
+      <testcase classname="PermutationSchedulerJUnitTest" name="testAssociateIndices_Normal" time="0.001" />
+
+      <testcase classname="PermutationSchedulerJUnitTest" name="testMinHeap_HeapifyDownScenarios" time="0.0" />
+
+      <testcase classname="PermutationSchedulerJUnitTest" name="testConstructor_NullIndexList" time="0.0" />
+
+      <testcase classname="PermutationSchedulerJUnitTest" name="testMinHeap_InsertAndExtract" time="0.0" />
+
+      <testcase classname="PermutationSchedulerJUnitTest" name="testAssociateIndices_IndexBeyondPermutationLength" time="0.004">
+          <error message="Cannot extract from an empty heap. Possibly caused by repeated index: 4" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Cannot extract from an empty heap. Possibly caused by repeated index: 4
+	at PermutationScheduler.associateIndices(PermutationScheduler.java:50)
+	at PermutationSchedulerJUnitTest.testAssociateIndices_IndexBeyondPermutationLength(PermutationSchedulerJUnitTest.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:535)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1197)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
+</error>
+
+      </testcase>
+
+      <testcase classname="PermutationSchedulerJUnitTest" name="testMinHeap_InsertNull" time="0.001" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+</testsuites>
