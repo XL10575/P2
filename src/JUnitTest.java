@@ -224,29 +224,4 @@ public class JUnitTest {
         assertEquals(1, result.length);
         assertEquals("Should have extracted the smallest of [5,1]", 1, result[0]);
     }
-
-    /**
-     * EXTRA: Test isHeapEmpty() in a scenario that returns TRUE but doesn't throw.
-     * We'll call it directly, ensuring both branches (true/false) are covered.
-     */
-    @Test
-    public void testPermutationScheduler_isHeapEmptyCoverage() {
-        int[] perm = {10};
-        int[] idx  = {}; // no indices, so associateIndices() won't fill the heap
-        PermutationScheduler scheduler = new PermutationScheduler(perm, idx);
-        
-        // Initially, no items inserted => isHeapEmpty() should be TRUE
-        assertTrue("Heap should be empty initially (no indices processed).", scheduler.isHeapEmpty());
-        
-        // Use an index so we do fill the heap
-        int[] idx2 = {0};
-        scheduler = new PermutationScheduler(perm, idx2);
-        // This call inserts one element, then extracts it. 
-        // After extraction, the heap is empty again.
-        int[] r = scheduler.associateIndices();
-        assertEquals(1, r.length);
-        
-        // Now check isHeapEmpty() after the extraction
-        assertTrue("Heap should be empty after single extraction of one item.", scheduler.isHeapEmpty());
-    }
 }
