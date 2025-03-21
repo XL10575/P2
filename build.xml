@@ -2,64 +2,55 @@
 Project directory structure:
   build.xml : this file
   .gitignore: git ignore files for Java (EECS 293 version).
+              This is a hidden file, but do not ignore!
   src/ : source .java files
 
-Generated directories:
+Generated directories
   build/ : .class files
   report/
     junit/index.html : JUnit report
     jacoco/index.html: JaCoCo report
   doc/ : JavaDoc
 
-Required JARs in $ANT_HOME/lib (or in your custom path if you redefine them):
-  - ant-junit4.jar
-  - ant-junit.jar
-  - junit-4.13.2.jar
-  - hamcrest-2.2.jar
-  - jacocoant.jar (for the JaCoCo tasks)
+$ANT_HOME/lib must contain (see Ant-JUnit and JaCoCo installation guides):
+  ant-junit4.jar
+  ant-junit.jar
+  hamcrest-2.2.jar
+  junit-4.13.jar
+  jacocoant.jar
+
 -->
-
-<project name="testexample" default="test" xmlns:jacoco="antlib:org.jacoco.ant">
-
-  <!-- ======================================================
-       1. Task Definition for JaCoCo
-       ====================================================== -->
-  <!-- If jacocoant.jar is in a location different from ${ant.home}/lib,
-       update the path accordingly -->
-  <path id="jacoco.classpath">
-    <pathelement location="${ant.home}/lib/jacocoant.jar"/>
-  </path>
-  <taskdef uri="antlib:org.jacoco.ant"
-           resource="org/jacoco/ant/antlib.xml"
-           classpathref="jacoco.classpath"/>
-
+<project name="testexample" xmlns:jacoco="antlib:org.jacoco.ant">
   <!--   Directory with source files -->
   <property name="src.dir" value="src"/>
-  <!--   Directory with the class files -->
+
+  <!--   Directories with the class files -->
   <property name="build.dir" value="build"/>
+
   <!--   Directories and files with the output -->
   <property name="output.dir" value="output"/>
   <property name="output.file" value="${output.dir}/output.txt"/>
   <property name="error.file" value="${output.dir}/error.txt"/>
+
   <!--   Directories and files with the reports on unit test and code coverage -->
   <property name="report.dir" value="report"/>
   <property name="junit.dir" value="${report.dir}/junit"/>
   <property name="jacoco.dir" value="${report.dir}/jacoco"/>
   <property name="jacoco.file" value="${jacoco.dir}/jacoco.exec"/>
+
   <!--   Directory for JavaDoc output -->
   <property name="doc.dir" value="doc"/>
 
-  <!-- (Optional) Class with main() if present; otherwise ignore. -->
-  <!-- <property name="main-class" value="testexample.HelloWorld"/> -->
+  <!--   Class containing the main method: define ONLY IF your project has a main -->
+  <!-- TODO: if this project specifies a main class, replace "HelloWorld" with that main class (otherwise, you can ignore this) -->
+  <!-- <property name="main-class" value="${ant.project.name}.HelloWorld"/> -->
 
-  <!--  Additional JAR that may be needed for properly running JUnit -->
+  <!--   Additional jar that may be needed for properly runnign junit -->
   <path id="hamcrest.classpath">
     <pathelement location="${ant.home}/lib/hamcrest-2.2.jar"/>
   </path>
 
-  <!-- ======================================================
-       2. CLEAN: remove generated files
-       ====================================================== -->
+  <!--   ant clean : remove generated files -->
   <target name="clean">
     <delete dir="${build.dir}"/>
     <delete dir="${report.dir}"/>
@@ -67,60 +58,76 @@ Required JARs in $ANT_HOME/lib (or in your custom path if you redefine them):
     <delete dir="${output.dir}"/>
   </target>
 
-  <!-- ======================================================
-       3. BUILD: compile all .java under src/
-       ====================================================== -->
+  <!--   ant build : compile the src  -->
   <target name="build">
     <mkdir dir="${build.dir}"/>
     <javac srcdir="${src.dir}" destdir="${build.dir}" debug="true" includeAntRuntime="yes"/>
   </target>
 
-  <!-- ======================================================
-       4. (Optional) RUN: define a run target if you have a main
-       ====================================================== -->
+  <!--   ant run : define run target ONLY IF your project has a main -->
   <!--
   <target name="run" depends="build">
     <mkdir dir="${output.dir}"/>
-    <java fork="true" classname="${main-class}" classpath="${build.dir}"
-          output="${output.file}" error="${error.file}">
+    <java fork="true" classname="${main-class}" classpath="${build.dir}" output="${output.file}" error="${error.file}">
       <assertions><enable/></assertions>
       <arg line="${args}"/>
     </java>
   </target>
   -->
 
-  <!-- ======================================================
-       5. TEST: run JUnit tests with JaCoCo instrumentation
-       ====================================================== -->
+  <!--   ant test : run unit tests -->
   <target name="test" depends="build">
     <mkdir dir="${report.dir}"/>
     <mkdir dir="${junit.dir}"/>
     <mkdir dir="${jacoco.dir}"/>
-    <!-- JaCoCo Coverage block -->
     <jacoco:coverage destfile="${jacoco.file}">
-      <!-- JUnit block -->
       <junit fork="yes" includeAntRuntime="yes" printsummary="withOutAndErr">
-        <assertions>
-          <enable/>
-        </assertions>
-        <!-- Generate XML results for JUnitReport -->
+        <assertions><enable/></assertions>
         <formatter type="xml"/>
         <batchtest fork="yes" filtertrace="off" todir="${junit.dir}">
-          <!-- Picks up any class ending with 'Test.class' in build/ -->
+          <!-- Updated fileset pattern to pick up classes ending with Test -->
           <fileset dir="${build.dir}" includes="**/*Test.class"/>
         </batchtest>
-        <!-- Classpaths: hamcrest, your compiled code, plus JUnit in $ANT_HOME/lib -->
         <classpath refid="hamcrest.classpath"/>
         <classpath path="${build.dir}"/>
       </junit>
     </jacoco:coverage>
   </target>
 
-  <!-- ======================================================
-       6. REPORT: generate JUnit (HTML) and JaCoCo (HTML) reports
-       ====================================================== -->
+  <!--   ant report : generate the JUnit and code coverage reports  -->
   <target name="report" depends="test">
-    <!-- JUnit Report -->
     <junitreport todir="${junit.dir}">
       <fileset dir="${junit.dir}" includes="TEST-*.xml"/>
       <report todir="${junit.dir}"/>
+    </junitreport>
+
+    <jacoco:report>
+      <executiondata>
+        <file file="${jacoco.file}"/>
+      </executiondata>
+
+      <structure name="${ant.project.name}">
+        <classfiles>
+          <fileset dir="${build.dir}">
+            <exclude name="**/*Test*.class" />
+          </fileset>
+        </classfiles>
+        <sourcefiles>
+          <fileset dir="${src.dir}"/>
+        </sourcefiles>
+      </structure>
+
+      <html destdir="${jacoco.dir}"/>
+    </jacoco:report>
+  </target>
+
+  <!--   ant doc: generate JavaDoc documentation -->
+  <target name="doc">
+    <mkdir dir="${doc.dir}"/>
+    <javadoc destdir="${doc.dir}" package="yes">
+      <fileset dir="${src.dir}" defaultexcludes="yes">
+        <exclude name="**/*Test.java"/>
+      </fileset>
+    </javadoc>
+  </target>
+</project>
