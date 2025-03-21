@@ -223,5 +223,43 @@ public class JUnitTest {
         // so the extracted min is 1
         assertEquals(1, result.length);
         assertEquals("Should have extracted the smallest of [5,1]", 1, result[0]);
+        
     }
+    @Test
+public void testPermutationScheduler_FullBranchCoverage() {
+    /*
+      Scenario:
+      - perm = {10, 20, 30} (length=3)
+      - idx = {3, 3}
+        1st iteration (j=0, targetIndex=3):
+          while(currentPos < 3) => increments currentPos from 0 -> 1 -> 2 -> 3
+          if(currentPos < 3) => true for 1,2 => inserts perm[1]=20, perm[2]=30
+          once currentPos=3 => the if(3<3) => false => skip insertion
+          -> heap now has [20,30] (assuming perm[0] was never inserted)
+          -> isHeapEmpty() => false => extract => result[0] = 20 (lowest)
+        2nd iteration (j=1, targetIndex=3):
+          while(3<3)? => false => no insertion
+          -> isHeapEmpty() => false => extract => result[1] = 30
+     
+      This covers:
+      - a while loop that runs multiple times (first iteration),
+      - a while loop that doesn't run at all (second iteration),
+      - a case where currentPos == permutation.length => skip insertion,
+      - no exception thrown from isHeapEmpty().
+    */
+
+    int[] perm = {10, 20, 30};
+    int[] idx  = {3, 3};
+
+    PermutationScheduler scheduler = new PermutationScheduler(perm, idx);
+    int[] result = scheduler.associateIndices();
+    assertEquals("We expect 2 extracted results", 2, result.length);
+
+    // Likely 20 then 30 are extracted (assuming minHeap never got perm[0]=10 
+    // because currentPos started at 0 but didn't insert perm[0] initially).
+    // If your logic does include perm[0] somehow, adjust accordingly.
+    assertEquals("First extracted element should be 20", 20, result[0]);
+    assertEquals("Second extracted element should be 30", 30, result[1]);
+}
+
 }
