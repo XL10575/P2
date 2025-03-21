@@ -21,7 +21,7 @@ public class MainTest {
         int[] result   = new int[indices.length];
 
         // --------------------------------------------------
-        // 3) Replicate the logic step-by-step, printing the details
+        // 3) Replicate the logic step-by-step, printing the details 
         // --------------------------------------------------
         System.out.println("Permutation P: " + Arrays.toString(permutation));
         System.out.println("Indices I: " + Arrays.toString(indices));
